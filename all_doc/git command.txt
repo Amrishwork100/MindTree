@@ -1,0 +1,222 @@
+Add eclipse to github--
+
+step 1: add path of your source code.
+C:\gcp_wrksp
+
+step 2:check what is present in your path
+ls
+step 3: create local repository
+git init
+
+step 4: add your source to github repo
+git remote add origin https://github.com/Amrishwork100/fronten-gcp.git
+git remote add origin  https://github.com/Amrishwork100/gcp-project.git
+git remote add origin https://github.com/Amrishwork100/backend-gcp.git
+https://github.com/Amrishwork100/gcp-project.git
+git remote add origin https://github.com/Amrishwork100/gcp-backend.git
+
+step 5: add all your source from specified path
+git add .
+
+step 6: add your commit
+git commit -m "angular project"
+
+step 7: push your source into repo
+(If the GitHub repo has seen new commits pushed to it, while you were working locally, I would advise using)
+git push -f origin master
+git pull --rebase origin master
+or 
+git pull
+
+step 8:
+git push
+git push origin master
+
+step 9: extra commands
+git config --global pull.rebase true
+git config --global rebase.autoStash true
+
+I would recommend a:
+git push -u origin master
+
+
+
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.2.2.RELEASE</version>
+		<relativePath /> <!-- lookup parent from repository -->
+
+	</parent>
+
+	<groupId>gcp-backend-application</groupId>
+	<artifactId>gcp-backend</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>war</packaging>
+	<name>gcp-backend</name>
+	<description>Spring Boot application</description><!-- <packaging>jar</packaging> -->
+
+	<properties>
+		<spring-cloud.version>Greenwich.SR1</spring-cloud.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+		<java.version>1.8</java.version>
+	</properties>
+
+	<dependencies>
+
+
+		<!-- <dependency> <groupId>org.springframework.cloud</groupId> <artifactId>spring-cloud-gcp-starter-sql-mysql</artifactId> 
+			</dependency> -->
+
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+
+
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-rest</artifactId>
+		</dependency>
+
+
+		<dependency>
+			<groupId>org.hsqldb</groupId>
+			<artifactId>hsqldb</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<optional>true</optional>
+		</dependency>
+
+		<!-- <dependency> <groupId>org.springframework.cloud</groupId> <artifactId>spring-cloud-gcp-starter-config</artifactId> 
+			</dependency> -->
+
+		<!-- <dependency> <groupId>org.springframework.cloud</groupId> <artifactId>spring-cloud-gcp-starter-storage</artifactId> 
+			</dependency> -->
+
+		<!-- <dependency> <groupId>org.springframework.boot</groupId> <artifactId>spring-boot-starter-tomcat</artifactId> 
+			<scope>provided</scope> </dependency> -->
+
+
+
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+		</dependency>
+
+		<!-- <dependency> <groupId>com.google.cloud</groupId> <artifactId>google-cloud-vision</artifactId> 
+			</dependency> -->
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+			<exclusions>
+				<exclusion>
+					<groupId>org.junit.vintage</groupId>
+					<artifactId>junit-vintage-engine</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+	</dependencies>
+
+
+			<!-- <dependencyManagement> <dependencies> <dependency> <groupId>org.springframework.cloud</groupId> 
+				<artifactId>spring-cloud-gcp-dependencies</artifactId> <version>1.1.0.M1</version> 
+				<type>pom</type> <scope>import</scope> </dependency> <dependency> <groupId>org.springframework.cloud</groupId> 
+				<artifactId>spring-cloud-dependencies</artifactId> <version>${spring-cloud.version}</version> 
+				<type>pom</type> <scope>import</scope> </dependency> </dependencies> </dependencyManagement> -->
+
+
+
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.springframework.boot</groupId>
+						<artifactId>spring-boot-maven-plugin</artifactId>
+					</plugin>
+					<plugin>
+						<artifactId>maven-resources-plugin</artifactId>
+						<executions>
+							<execution>
+								<id>copy-resources</id>
+								<phase>validate</phase>
+								<goals>
+									<goal>copy-resources</goal>
+								</goals>
+								<configuration>
+									<outputDirectory>${basedir}/target/classes/static/</outputDirectory>
+									<resources>
+										<resource>
+											<directory>${basedir}/../angular8-springboot/dist/angular8-springboot</directory>
+										</resource>
+									</resources>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+
+			<!-- <repositories> <repository> <id>spring-milestones</id> <name>Spring 
+				Milestones</name> <url>https://repo.spring.io/libs-milestone</url> <snapshots> 
+				<enabled>false</enabled> </snapshots> </repository> </repositories> -->
+
+</project>
+
+
+
+See "Why do I need to explicitly push a new branch?".
+
+Since the OP already reset and redone its commit on top of origin/master:
+
+git reset --mixed origin/master
+git add .
+git commit -m "This is a new commit for what I originally planned to be amended"
+git push origin master
+There is no need to pull --rebase.
+
+Note: git reset --mixed origin/master can also be written git reset origin/master, since the --mixed option is the default one when using git reset.
+
+
+
+https://github.com/Amrishwork100/fronten-gcp.git
+https://github.com/Amrishwork100/gcp-project.git
+
+
+

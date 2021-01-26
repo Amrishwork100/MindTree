@@ -1,0 +1,33 @@
+Assignment 1
+Last edited: 12/3/19
+Hands-on exercises
+Perform the following
+
+1.Create GCE: https://cloud.google.com/compute/docs/quickstart-linux
+2.Create Windows GCE: https://cloud.google.com/compute/docs/quickstart-windows
+3.SSH connecting: https://cloud.google.com/compute/docs/instances/connecting-to-instance
+4.For creating custom VPC: Follow instructions https://cloud.google.com/vpc/docs/using-vpc
+5.For firewall rules: Follow instructions https://cloud.google.com/vpc/docs/using-firewalls
+6.For using startup scripts for GCE: Follow instructions https://cloud.google.com/compute/docs/startupscript
+
+
+
+[‎3/‎11/‎2020 3:42 PM]  Logesh Moorthy:  
+Prabakaran Kuppuswamy
+
+
+
+#spring.mail.host =	smtp.mailtrap.io
+#spring.mail.port= 2525
+#spring.mail.username = b210e88d9af7e0
+#spring.mail.password = 	ef7c538947c98a
+
+
+
+# Other properties
+#spring.mail.properties.mail.smtp.connectiontimeout=5000
+#spring.mail.properties.mail.smtp.timeout=5000
+#spring.mail.properties.mail.smtp.writetimeout=5000
+ 
+
+

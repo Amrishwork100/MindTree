@@ -1,0 +1,231 @@
+mkdir tomcat
+sudo apt-get install default-jdk
+
+cd tomcat/
+sudo wget http://mirrors.estointernet.in/apache/tomcat/tomcat-9/v9.0.31/bin/apache-tomcat-9.0.31.zip
+
+sudo apt-get install unzip
+
+sudo unzip apache-tomcat-9.0.31.zip
+
+cd apache-tomcat-9.0.31/conf/
+
+sudo vi server.xml
+
+cd /software/apache-tomcat-9.0.31/bin
+
+sudo chmod 700 ~/software/apache-tomcat-9.0.31/bin/*.sh
+sudo ./startup.sh
+------------------------------------------------------------------------------------------------------------------
+
+root@frontend-gce-8080:/tomcat/apache-tomcat-8.5.49/bin# sudo ./startup.sh
+
+root@frontend-gce-8080:/tomcat/apache-tomcat-8.5.49/webapps# 
+
+startup tomcat server-
+root@frontend-gce-8080:/tomcat/apache-tomcat-8.5.49/bin# sudo ./startup.sh
+
+shutdown tomcat server-
+sudo ./shutdown.sh
+
+war file uploaded at 
+root@frontend-gce-8080:/home/amrishk325# 
+
+war file move to 
+/tomcat/apache-tomcat-8.5.49/webapps
+cmd-
+mv frontend-0.0.1-SNAPSHOT.war /tomcat/apache-tomcat-8.5.49/webapps
+
+guestbook-0.0.1-SNAPSHOT.war
+mv guestbook-0.0.1-SNAPSHOT.war /tomcat/apache-tomcat-8.5.49/webapps
+
+
+
+chmod 700 /tomcat/apache-tomcat-8.5.49/bin/*.sh
+------------------------------------------------------------
+rmdir /tmp/docs
+https://github.com/Amrishwork100/gcp-project.git
+
+gcp-project
+$ cp -a ~/gcp-project/1-bootstrap/ 
+
+cp -a ~/gcp-project/1-bootstrap/gcp-backend\
+~/gcp-backend
+
+  
+
+frontend running on port
+
+cd /usr/local/apache-maven/apache-maven-3.1.1/bin/mvn
+
+/home/amrishk325/gcp-project/gcp-backend/mvnw
+
+rmdir gcp-project
+
+To get list of instanec from gcp sql 
+-------------------------------------
+gcloud sql instances list
+
+
+To create gcp cloudsql instance
+------------------------------------
+gcloud sql instances create gcpproject --region=us-central1
+
+gcloud sql databases create gcpdatabase --instance gcpproject 
+
+To connect with created cloudsql instacne
+-----------------------------------------
+gcloud sql connect gcpproject 
+
+
+create table in gcp cloud
+---------------------------------
+CREATE TABLE gcpbackend_messages (
+  id BIGINT NOT NULL AUTO_INCREMENT,
+  firstName CHAR(128) NOT NULL,
+  lastName CHAR(255),
+  emailId CHAR(255),
+  PRIMARY KEY (id)
+);
+
+To get JDBC connection name
+-----------------------------
+gcloud sql instances describe gcpproject --format='value(connectionName)'
+appdemo-260905:us-central1:gcpproject
+gcloud sql instances describe guestbook --format='value(connectionName)'
+appdemo-260905:us-central1:gcpproject
+
+gcp project name====Current AppDemo  appdemo-260905
+----------------------------------------
+
+To connect Cloudsql
+-------------------------
+gcloud sql connect gcpproject 
+cd gcp-project/gcp-backend/
+
+To run springboot project on specific port
+-------------------------------------------
+./mvnw spring-boot:run -Dserver.port=8081 -Dspring.profiles.active=cloud
+
+
+To delete folder in linux
+---------------------------
+sudo rm -rf gcp-spring
+
+
+To hit database using post request
+----------------------------------
+curl -XPOST -H "content-type: application/json" \
+  -d '{"firstName": "amrish", "lastName": "kumar","emailId": "amrishwork100@gmail.com}' \
+  http://localhost:8080/gcp-backend
+
+To install maven and update project
+-------------------------------------
+sudo apt update
+sudo apt install maven 
+
+
+application-cloud.properties
+------------------------------
+#spring.cloud.gcp.config.enabled=true
+#spring.cloud.gcp.config.name=gcp-backend
+#spring.cloud.gcp.config.profile=cloud
+
+#spring.cloud.gcp.sql.enabled=true
+#spring.cloud.gcp.sql.database-name=gcpdatabase 
+#spring.cloud.gcp.sql.instance-connection-name=appdemo-260905:us-central1:gcpproject
+#appdemo-260905:us-central1:gcpproject
+#spring.datasource.hikari.maximum-pool-size=5
+#spring.main.allow-bean-definition-overriding=true
+
+spring.datasource.driverClassName=com.mysql.cj.jdbc.Driver
+spring.jpa.hibernate.ddl-auto=upadte
+spring.datasource.url=jdbc:mysql://35.226.151.78:3306/gcpdatabase
+spring.datasource.username=root
+spring.datasource.password=@@Tech1234
+spring.datasource.initialization-mode=always
+server.port = 8081
+spring.jpa.properties.hibernate.dialect: org.hibernate.dialect.MySQL5Dialect
+
+#Here added:
+spring.cloud.gcp.sql.instance-connection-name=appdemo-260905:us-central1:gcpproject
+spring.cloud.gcp.sql.database-name=gcpdatabase
+
+
+
+
+application.properties
+------------------------------------------------------------------
+#spring.datasource.url = jdbc:mysql://localhost:3306/users_database
+#spring.datasource.username = root
+#spring.datasource.password = @@Tech1234
+
+
+## Hibernate Properties
+# The SQL dialect makes Hibernate generate better SQL for the chosen database
+#spring.jpa.properties.hibernate.dialect = org.hibernate.dialect.MySQL5Dialect
+
+# Hibernate ddl auto (create, create-drop, validate, update)
+#spring.jpa.hibernate.ddl-auto = update
+
+#---------------------------------------------------------------------
+
+#spring.datasource.driverClassName =com.mysql.cj.jdbc.Driver
+#spring.datasource.url =jdbc:mysql://localhost:3306/users_database
+#spring.datasource.username =root
+#spring.datasource.password =@@Tech1234
+
+#spring.jpa.show-sql =true
+#spring.jpa.properties.hibernate.dialect =org.hibernate.dialect.MySQL5InnoDBDialect
+#spring.jpa.hibernate.ddl-auto=update
+#spring.jpa.properties.hibernate.format_sql=true
+#spring.jpa.properties.hibernate.generate_statistics=false
+
+
+
+
+
+
+
+
+/angular8-springboot/dist/angular8-springboot
+
+
+<project>
+  ...
+
+  <build>
+    <outputDirectory>${basedir}/${target.dir}/classes</outputDirectory>
+    <testOutputDirectory>${basedir}/${target.dir}/test-classes</testOutputDirectory>
+  </build>
+
+  <properties>
+    <target.dir>target</target.dir>
+  </properties>
+
+  <profiles>
+    <profile>
+      <id>eclipse-folders</id>
+      <properties>
+        <target.dir>target-eclipse</target.dir>
+      </properties>
+    </profile>
+  </profiles>
+  ...  
+
+
+<dependency>
+			<groupId>org.hsqldb</groupId>
+			<artifactId>hsqldb</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+
+
+<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-tomcat</artifactId>
+			<scope>provided</scope>
+		</dependency>
+
+
+

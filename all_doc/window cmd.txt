@@ -1,0 +1,35 @@
+<dependency>
+<groupId>org.springframework.integration</groupId>
+<artifactId>spring-integration-core</artifactId>
+</dependency>
+
+1) Go to (Open) Command Prompt (Press Window + R then type cmd Run this).
+
+2) Run following commands
+
+For all listening ports
+
+netstat -aon | find /i "listening"
+Apply port filter
+
+netstat -aon |find /i "listening" |find "8080"
+Finally with the PID we can run the following command to kill the process
+
+3) Copy PID from result set
+
+taskkill /F /PID
+Ex: taskkill /F /PID 189
+
+Sometimes you need to run Command Prompt with Administrator privileges
+
+
+
+
+
+
+
+errror: failed to push some refs to 'https://github.com/Amrishwork100/gcp-project.git'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. Integrate the remote changes (e.g.
+hint: 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.

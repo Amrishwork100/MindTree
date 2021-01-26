@@ -1,0 +1,28 @@
+1.create a folder
+------------------
+mkdir software
+
+2. install jdk
+------------------
+sudo apt-get install default-jdk
+
+3.To install maven and update project
+-------------------------------------
+sudo apt update
+sudo apt install maven 
+
+4.clone spring boot project from git to cloud shell
+-------------------------------------------------
+https://github.com/Amrishwork100/sabre.git
+
+5.build maven project
+-----------------------
+mvn install clean
+
+6. give permission to maven by below command
+------------------------------------------------
+chmod +x mvnw
+
+7. run spring boot project
+------------------------------------------
+./mvnw -q spring-boot:run -Dserver.port=8081

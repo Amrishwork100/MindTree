@@ -1,0 +1,72 @@
+node -v
+v8.12.0
+npm -v
+6.4.1
+
+npm install -g @angular/cli
+
+ng --version
+
+ng new angular7-springboot-client
+
+- ng g s employee
+– ng g c create-employee
+– ng g c employee-details
+– ng g c employee-list
+
+ng g component my-new-component
+ng g directive my-new-directive
+ng g pipe my-new-pipe
+ng g service my-new-service
+ng g class my-new-class
+ng g guard my-new-guard
+ng g interface my-new-interface
+ng g enum my-new-enum
+ng g module my-module
+
+Here is complete command and output for your reference:
+
+C:\angular7\angular7-springboot-client\src\app>ng g s employee
+CREATE src/app/employee.service.spec.ts (343 bytes)
+CREATE src/app/employee.service.ts (137 bytes)
+
+C:\angular7\angular7-springboot-client\src\app>ng g c create-employee
+CREATE src/app/create-employee/create-employee.component.html (34 bytes)
+CREATE src/app/create-employee/create-employee.component.spec.ts (685 bytes)
+CREATE src/app/create-employee/create-employee.component.ts (304 bytes)
+CREATE src/app/create-employee/create-employee.component.css (0 bytes)
+UPDATE src/app/app.module.ts (509 bytes)
+
+C:\angular7\angular7-springboot-client\src\app>ng g c employee-details
+CREATE src/app/employee-details/employee-details.component.html (35 bytes)
+CREATE src/app/employee-details/employee-details.component.spec.ts (692 bytes)
+CREATE src/app/employee-details/employee-details.component.ts (308 bytes)
+CREATE src/app/employee-details/employee-details.component.css (0 bytes)
+UPDATE src/app/app.module.ts (629 bytes)
+
+C:\angular7\angular7-springboot-client\src\app>ng g c employee-list
+CREATE src/app/employee-list/employee-list.component.html (32 bytes)
+CREATE src/app/employee-list/employee-list.component.spec.ts (671 bytes)
+CREATE src/app/employee-list/employee-list.component.ts (296 bytes)
+CREATE src/app/employee-list/employee-list.component.css (0 bytes)
+UPDATE src/app/app.module.ts (737 bytes)
+
+Integrate Bootstrap with Angular
+npm install bootstrap jquery --save
+npm install bootstrap --save
+npm install jquery --save
+npm install popper.js --save
+
+"styles": [
+  "src/styles.css",
+  //"node_modules/bootstrap/dist/css/bootstrap.min.css"
+],
+"scripts": [
+    "../node_modules/jquery/dist/jquery.min.js",
+    "../node_modules/bootstrap/dist/js/bootstrap.min.js"
+  ],
+
+Finally, open src\styles.css and add:
+@import "~bootstrap/dist/css/bootstrap.css";
+
+you can start spring boot application via command line using mvn spring-boot:run command.
